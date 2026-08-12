@@ -4,7 +4,7 @@ WORKDIR /gym
 
 COPY . .
 
-RUN mvn clean package -DskipTest
+RUN mvn clean package -DskipTests
 
 #segunda etapa
 
@@ -16,4 +16,4 @@ COPY --from=build /gym/target/*.jar gym.jar
 
 EXPOSE 8080
 
-CMD["java","-jar","gym.jar"]
+CMD ["java","-jar","gym.jar"]
